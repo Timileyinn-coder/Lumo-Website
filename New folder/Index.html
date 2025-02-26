@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-coming-soon {
+            background: url('background.jpg') center/cover no-repeat;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            ScrollReveal().reveal('.header-logo', { duration: 1200, origin: 'left', distance: '50px', delay: 300 });
+            ScrollReveal().reveal('.button-reveal', { duration: 1200, origin: 'bottom', distance: '30px', delay: 500 });
+            ScrollReveal().reveal('.coming-soon', { duration: 1500, origin: 'top', distance: '50px' });
+            ScrollReveal().reveal('.section-reveal', { duration: 1500, origin: 'bottom', distance: '50px', delay: 200 });
+            ScrollReveal().reveal('.team-card', { duration: 1500, origin: 'bottom', distance: '30px', interval: 200 });
+        });
+    </script>
+    <header class="absolute top-5 left-5 text-white text-3xl font-extrabold tracking-wide font-serif header-logo">Lumo</header>
+    
+    <!-- Coming Soon Section -->
+    <section class="bg-coming-soon text-white flex flex-col items-center justify-center text-center p-10 coming-soon">
+        <h1 class="text-5xl font-bold">Coming Soon</h1>
+        <p class="mt-4 text-lg">We're launching something amazing. Stay tuned!</p>
+        <div id="countdown" class="text-2xl mt-5"></div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="bg-white text-center py-16 section-reveal">
+        <h2 class="text-4xl font-bold">About Us</h2>
+        <p class="mt-4 text-lg">We are a team of dedicated professionals bringing creative solutions to life.</p>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="bg-white text-center py-16 section-reveal">
+        <h2 class="text-4xl font-bold">What We Do</h2>
+        <p class="mt-4 text-lg">We specialize in delivering top-notch services and innovative ideas to help your business grow.</p>
+    </section>
+
+    <!-- Awesome Teams -->
+    <section class="bg-white text-center py-16 section-reveal">
+        <h2 class="text-4xl font-bold">Awesome Teams</h2>
+        <p class="mt-4 text-lg">Meet our talented team members.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-8">
+            <div class="bg-white p-6 shadow-lg rounded-lg team-card transform transition duration-300 hover:scale-105">
+                <img src="timi.jpeg" alt="Emmanuel Osundeyi" class="w-32 h-32 object-cover rounded-full mx-auto">
+                <h3 class="mt-4 text-xl font-semibold">Emmanuel Osundeyi</h3>
+                <p class="text-gray-600">Front-end Developer</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg team-card transform transition duration-300 hover:scale-105">
+                <img src="kennth.jpeg" alt="kenneth Nwawko" class="w-32 h-32 object-cover rounded-full mx-auto">
+                <h3 class="mt-4 text-xl font-semibold">Kenneth Nwawko</h3>
+                <p class="text-gray-600">UI/UX Designer</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg team-card transform transition duration-300 hover:scale-105">
+                <img src="img/team3.jpg" alt="Michael Smith" class="w-32 h-32 object-cover rounded-full mx-auto">
+                <h3 class="mt-4 text-xl font-semibold">Davis Media</h3>
+                <p class="text-gray-600">Back-end Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Solutions -->
+    <section class="bg-white text-center py-16 section-reveal">
+        <h2 class="text-4xl font-bold">We Provide Creative Solutions</h2>
+        <p class="mt-4 text-lg">Innovative ideas to elevate your business.</p>
+    </section>
+
+    <!-- Get In Touch -->
+    <section class="bg-white text-center py-16 section-reveal">
+        <h2 class="text-4xl font-bold">Get In Touch</h2>
+        <p class="mt-4 text-lg">We'd love to hear from you!</p>
+        <form class="mt-8 max-w-lg mx-auto">
+            <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded">
+            <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded">
+            <textarea placeholder="Your Message" class="w-full p-3 mb-4 border rounded"></textarea>
+            <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded transform transition duration-300 hover:scale-110 hover:bg-blue-700">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        function updateCountdown() {
+            const launchDate = new Date("2025-03-01T00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
