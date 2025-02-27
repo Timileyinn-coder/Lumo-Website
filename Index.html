@@ -78,12 +78,12 @@
     <section class="bg-white text-center py-16 section-reveal">
         <h2 class="text-4xl font-bold">Get In Touch</h2>
         <p class="mt-4 text-lg">We'd love to hear from you!</p>
-        <form class="mt-8 max-w-lg mx-auto">
-            <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 border rounded">
-            <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded">
-            <textarea placeholder="Your Message" class="w-full p-3 mb-4 border rounded"></textarea>
+        <form name="contact" method="POST" data-netlify="true" class="mt-8 max-w-lg mx-auto">
+            <input type="text" name="name" placeholder="Your Name" class="w-full p-3 mb-4 border rounded" required>
+            <input type="email" name="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded" required>
+            <textarea name="message" placeholder="Your Message" class="w-full p-3 mb-4 border rounded" required></textarea>
             <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded transform transition duration-300 hover:scale-110 hover:bg-blue-700">Send Message</button>
-        </form>
+        </form>        
     </section>
 
     <script>
